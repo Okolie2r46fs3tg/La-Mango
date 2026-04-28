@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-mango-green: #1B4332;
+  --color-mango-gold: #C9A84C;
+  --color-mango-cream: #F5F0E8;
+  --color-mango-dark: #1A1A1A;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-mango-dark text-mango-cream font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.glass-nav {
+  @apply bg-mango-dark/90 backdrop-blur-md border-b border-mango-gold/20;
+}
+
+.gold-outline-text {
+  -webkit-text-stroke: 1px #C9A84C;
+  color: transparent;
+}
+
+.masonry-item {
+  @apply relative overflow-hidden rounded-lg;
+}
+
+.masonry-item img {
+  @apply transition-transform duration-500 hover:scale-110;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-mango-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-mango-gold/50 rounded-full hover:bg-mango-gold;
+}
