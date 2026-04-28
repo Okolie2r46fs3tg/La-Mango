@@ -468,6 +468,14 @@ const Gallery = () => {
           {images.map((img, i) => (
             <motion.div 
               key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                duration: 0.8, 
+                delay: (i % 3) * 0.15,
+                ease: [0.21, 0.47, 0.32, 0.98] 
+              }}
               whileHover={{ scale: 1.02 }}
               className={`aspect-square relative rounded-2xl overflow-hidden cursor-pointer group shadow-2xl ${img.color}/20 flex items-center justify-center border border-mango-gold/10`}
             >
